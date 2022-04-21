@@ -93,17 +93,14 @@ ul li:hover{
     text-decoration: none;
 }
 
-ul li::placeholder{
-    background-color: var(--orange);
-    color: var(--white);
-    transition: all;
-    opacity: 5;
-
-}
 
 ul li a{
     text-decoration: none;
     color: var(--white);
+}
+
+ul li.active{
+    background-color: var(--orange);
 }
 
 button{
@@ -111,6 +108,7 @@ button{
     border: none;
     color: var(--white);
     text-align: center;
+    padding-top: 2px;
     margin-right: 5px;
     margin-left: 5px;
     width: 95%;

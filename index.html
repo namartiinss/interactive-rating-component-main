@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  
-  
+  <link rel="stylesheet" href="./enviado.html">
+
+
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
+
 <body>
   <main class="main">
     <div class="container">
       <div class="star">
         <img src="./images/icon-star.svg" class="imgEstrela">
       </div>
-        <h1>How did we do?</h1>
+      <h1>How did we do?</h1>
 
-        <p>Please let us know how we did with your support request. All feedback is appreciated 
-          to help us improve our offering!</p>
+      <p>Please let us know how we did with your support request. All feedback is appreciated
+        to help us improve our offering!</p>
 
       <div>
-        <ul>
+        <ul class="list">
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
           <li><a href="#">3</a></li>
@@ -34,18 +38,32 @@
         </ul>
       </div>
 
-        <button>Submit</button>
+      <button class="btn">Submit</button>
     </div>
   </main>
-
-  <!--You selected Add rating here out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  Thank you state end -->
   </div>
+
+  <script>
+    const myList = document.querySelectorAll(".list li")
+    localStorage.clear()
+
+    myList.forEach((el, index) => {
+      el.addEventListener("click", () => {
+        myList.forEach((el, index) => {
+          el.classList.remove("active")
+        })
+        el.classList.add("active")
+        localStorage.setItem("message", el.textContent)
+      })
+    })
+
+    const btn = document.querySelector(".btn")
+
+    btn.addEventListener("click", () => {
+      window.location.href = "enviado.html"
+    })
+
+  </script>
 </body>
+
 </html>
