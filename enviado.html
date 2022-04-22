@@ -17,7 +17,7 @@
         <div class="container2">
             <img class="image" src="./images/illustration-thank-you.svg" alt="">
             <div class="message">
-            <p>You selected out of 5</p>
+            <p></p>
             </div>
             <div class="text">
 
@@ -28,7 +28,7 @@
             </div>
             <script>
                 const valor = localStorage.getItem("message")
-                document.querySelector(".message").innerHTML = ` You selected<strong>${valor}</strong>out of 5 `
+                document.querySelector(".message p").innerHTML = ` You selected <strong>${valor}</strong> out of 5 `
                 console.log(valor)
             </script>
         </div>   
